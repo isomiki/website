@@ -70,7 +70,6 @@ module ApplicationHelper
   TOOLS_LIST = {
     "one" => "One",
     "two" => "Two",
-    "three" => "Three",
   }
   
   def load_tools
