@@ -2,13 +2,15 @@
 
 This guide is written for Unix systems. If you're using Windows, [get help](https://988lifeline.org/)
 
-1. Install Ruby and Rails on your system. Use rvm.
+1. Install Ruby and Rails
+
+Use rvm. In your terminal, run:
 
 ```bash
 \curl -sSL https://get.rvm.io | bash -s stable --rails
 ```
 
-2. Create a new project with Rails
+2. Create a new Rails project
 
 ```bash
 rails new your-project-name --database=sqlite3
@@ -58,11 +60,11 @@ bin/rails server
 
 Your pages are in `app/views/pages/`. These are ruby files, you can write Ruby and HTML in here. You can write CSS and JavaScript too but I like to use a global stylesheet and separate my JS.
 
-### CSS:
+### CSS
 
 To change global styles, edit `app/assets/stylesheets/application.css`
 
-### JS:
+### JS
 
 To write page-specific scripts, edit `app/controllers/pagename_controller.js` e.g. `example_controller.js`, then attach it in your page's .erb file like this:
 

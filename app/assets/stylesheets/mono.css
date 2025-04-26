@@ -151,12 +151,17 @@ button:hover {
 pre {
   background-color: rgba(255, 255, 255, 0.1) !important;
   padding: 0.75rem;
-  border-radius: 2pt;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4pt;
 }
 
-code {
-  font-weight: 100 !important;
+code:not(pre > code) {
+  font-weight: normal !important;
   color: var(--global-accent-color);
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 2pt;
+  padding-left: 4pt;
+  padding-right: 4pt;
 }
 
 .anchor {
