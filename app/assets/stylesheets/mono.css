@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+@font-face {
+  font-family: "Nice font huh? Trying to find the name? Well I tricked your browser so now you need to use one of those terrible font detection websites. Or use it as a reason to contact me :)";
+  src: url("fonts/monospace.ttf") format("truetype");
+  font-weight: normal;
+}
+
+:root {
+  --global-bg-color: rgb(12, 12, 11);
+  /* --global-bg-color: #010101; */
+  --global-accent-color: rgb(255, 229, 197);
+  --global-accent-color-light: rgb(255, 243, 228);
+}
+
+body {
+  background-color: var(--global-bg-color);
+  color: white;
+  font-family: "Nice font huh? Trying to find the name? Well I tricked your browser so now you need to use one of those terrible font detection websites. Or use it as a reason to contact me :)";
+  font-size: 11pt;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  overflow-wrap: break-word;
+  max-width: 640px;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+a {
+  color: var(--global-accent-color);
+  text-decoration: underline;
+  text-decoration-thickness: 2pt;
+  text-underline-offset: 2.3pt;
+  padding-left: 2.3pt;
+  padding-right: 2.3pt;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: var(--global-bg-color);
+  background-color: var(--global-accent-color);
+  text-decoration-color: var(--global-accent-color);
+  border-radius: 2pt;
+  text-decoration: none;
+  padding-bottom: 0.3pt;
+  padding-top: 0.3pt;
+}
+
+/* Don't break navigation bar options */
+#top > div > span > a {
+  white-space: nowrap;
+}
+
+.section {
+  margin-top: 3rem;
+}
+
+.section > *:nth-child(2) {
+  margin-top: 2rem;
+}
+
+.section > *:not(:nth-child(1)) {
+  margin-left: 0rem;
+}
+
+.section > h3:not(:nth-of-type(1)) {
+  margin-top: 2rem;
+}
+
+h2 {
+  text-decoration: underline;
+  text-decoration-thickness: 3pt;
+  text-underline-offset: 4pt;
+  line-height: 1.8em;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+h3::before {
+  content: "> ";
+}
+
+img {
+  border-radius: 0.5rem;
+}
+
+#table-of-contents {
+  word-wrap: normal;
+}
+
+.toc-item {
+  line-height: 30pt;
+  word-wrap: normal;
+}
+
+.toc-item:not(:nth-last-child(1)) {
+  margin-right: 1rem;
+}
+
+.cmd-prompt {
+  color: var(--global-accent-color);
+}
+
+.cmd-carret {
+  animation: blink 750ms step-start infinite;
+  /* color: var(--global-accent-color); */
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+ul {
+  padding-left: 14.55pt;
+}
+
+ul li {
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+}
+
+ul li::marker {
+  content: "- ";
+}
+
+button {
+  background-color: var(--global-accent-color);
+  border: 0;
+  font-size: 12pt;
+  padding: 4pt 6pt;
+  border-radius: 2pt;
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.spacer {
+  margin: 3rem 0;
+}
+
+pre {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  padding: 0.75rem;
+  border-radius: 2pt;
+}
+
+code {
+  font-weight: 100 !important;
+  color: var(--global-accent-color);
+}
+
+.anchor {
+  display: none;
+}

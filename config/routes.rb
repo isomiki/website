@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
   root "pages#home"
+
   get "about", to: "pages#about"
-  #get "projects", to: "pages#contact"
-  #get "tools"
+  get "projects", to: "pages#projects"
+  get "tools", to: "pages#tools"
+  get 'tools/:name', to: 'tools#show', as: :tool
   get "contact", to: "pages#contact"
-  #get "posts"
-  #get "crypto"
-  #get "misc"
+  get "posts", to: "pages#posts"
+  get "posts/:name", to: "posts#show", as: :post
+  get "crypto", to: "pages#crypto"
+  get "misc", to: "pages#misc"
+
+  get "not-found", to: "application#not_found"
+
+  # Match all other paths and show not found
+  match "*path", to: "application#not_found", via: :all
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

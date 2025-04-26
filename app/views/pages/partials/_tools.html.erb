@@ -1,0 +1,11 @@
+<div class="section">
+    <h2>TOOLS</h2>
+
+    <% if load_tools.present? %>
+    <% load_tools.each do |tool| %>
+    <p><%= link_to tool[:title], tool_path(name: tool[:id]) %></p>
+    <% end %>
+    <% else %>
+    <p>Empty</p>
+    <% end %>
+</div>
