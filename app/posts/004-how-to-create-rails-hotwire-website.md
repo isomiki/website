@@ -1,4 +1,4 @@
-## How to create a Ruby on Rails website using Hotwire
+## How to create a Rails + Hotwire website using Hotwire
 
 This guide is written for Unix systems. If you're using Windows, [get help](https://988lifeline.org/)
 
@@ -100,4 +100,4 @@ rails db:migrate
 
 The app will automatically reload when you make changes to the HTML. But if you make changes to the CSS or to things like controllers or the router, you need to restart your server (ctrl+c to stop it and then run `bin/rails server`).
 
-Next you'll probably want to host it somewhere. Read [this](/posts/005-hosting-hotwire-on-coolify)
+Next you'll probably want to host it somewhere. Read [this](/posts/005-hosting-rails-hotwire-on-coolify)

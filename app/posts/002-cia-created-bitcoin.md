@@ -5,5 +5,3 @@ They could infiltrate the ASIC manufacturers and plant hardware-level backdoors/
 They could also just assassinate people involved.
 
 The fact that this didn't happen makes it likely that they created it. This theory is further supported by the fact that it came out of the USA specifically at a time of debt crisis and how it gives the USA an advantage for adopting it before other nations, an adoption which is suspiciously unnatural.
-
-Finance is one of the most important topics, necessary for understanding the world, so I suggest you read Mark Goodwin's "The Bitcoin Dollar" or watch his interviews.
