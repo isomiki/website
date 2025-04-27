@@ -84,4 +84,13 @@ module ApplicationHelper
 
     tool_entries
   end
+
+  def misc_md_dir
+    Rails.root.join("app", "misc-md")
+  end
+
+  def render_md(file_path)
+    content = File.read(file_path)
+    Commonmarker.to_html(content).html_safe
+  end
 end

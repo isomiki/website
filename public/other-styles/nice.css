@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 @font-face {
   font-family: "Perfectly Nineties";
-  src: url("../fonts/PerfectlyNineties-Regular.ttf") format("truetype");
+  src: url("/fonts/PerfectlyNineties-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 
@@ -11,18 +11,34 @@
   --global-bg-color: rgb(255, 251, 246);
   /* --global-bg-color: #010101; */
   --global-text-color: #2f2f2f;
-  --global-accent-color: rgb(60, 93, 255);
+  --global-accent-color: rgb(155, 155, 155);
 }
 
 body {
   background-color: var(--global-bg-color);
   color: var(--global-text-color);
   font-family: "Spectral", serif;
-  /* font-size: 11pt; */
+  font-size: 12pt;
   margin: 3rem auto;
   padding: 0 1rem;
   overflow-wrap: break-word;
   max-width: 640px;
+}
+
+span {
+  color: #f0f;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+ul li {
+  margin: 0.5rem 0;
+}
+
+ol li {
+  margin: 0.5rem 0;
 }
 
 h1 {
