@@ -1,9 +1,6 @@
 # How to create a Rails + Hotwire website
 
 > **You only need the first 7 steps, the rest is extra info.**
->
-> - what
-> - niga
 
 This guide is written for Unix systems. If you're using Windows, [get help](https://988lifeline.org/)
 
