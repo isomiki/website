@@ -59,13 +59,7 @@ RAILS_ENV=production
 SECRET_KEY_BASE=your-rails-secret
 ```
 
-## Deploy
-
-Now click "Deploy" in the top right corner. You can close the side panel that opens up.
-
-Once you see a green "Running" label on top of the Configuration screen, you can visit the domain you set before.
-
-You're done.
+You're done. Click "Deploy" on top.
 
 ## Notes
 
