@@ -69,3 +69,5 @@ end
 gem "dotenv-rails", "~> 3.1"
 
 gem "commonmarker", "~> 2.3"
+
+gem "erb-formatter", "~> 0.7.3"

@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   get "posts", to: "pages#posts"
   get "posts/:name", to: "posts#show", as: :post
   get "crypto", to: "pages#crypto"
+  
   get "misc", to: "pages#misc"
+  get 'm/:page', to: 'pages#miscpage'
+  
   get "test", to: "pages#test"
 
   get "not-found", to: "application#not_found"

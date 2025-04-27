@@ -22,4 +22,9 @@ class PagesController < ApplicationController
 
   def misc
   end
+
+  def miscpage
+    page = params[:page]
+    render "pages/misc/#{page}"
+  end
 end

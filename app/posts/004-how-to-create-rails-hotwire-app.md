@@ -1,4 +1,4 @@
-# How to create a Rails + Hotwire website using Hotwire
+# How to create a Rails + Hotwire website
 
 > **You only need the first 7 steps, the rest is extra info.**
 
@@ -103,6 +103,12 @@ Then edit `app/views/pages/home.html.erb` and add this:
 Restart your server.
 
 Now when you visit your homepage (at `/`) you will see the current date.
+
+Of course, you could also inline that and skip the helper:
+
+```html
+<p><%= Date.today.to_s %></p>
+```
 
 ### Adding JavaScript code
 

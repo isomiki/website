@@ -1,11 +1,12 @@
 <div id="posts" class="section">
-    <h2>POSTS</h2>
+  <h2>POSTS</h2>
 
-    <% if load_posts.present? %>
+  <% if load_posts.present? %>
     <% load_posts.each do |post| %>
-    <p>[<%= post[:index] %>] <%= link_to post[:title], post_path(name: post[:file_name]) %></p>
+      <p>[<%= post[:index] %>]
+        <%= link_to post[:title], post_path(name: post[:file_name]) %></p>
     <% end %>
-    <% else %>
+  <% else %>
     <p>Empty</p>
-    <% end %>
+  <% end %>
 </div>
