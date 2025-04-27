@@ -1,6 +1,10 @@
-## How to create a Rails + Hotwire website using Hotwire
+# How to create a Rails + Hotwire website using Hotwire
+
+> **You only need the first 7 steps, the rest is extra info.**
 
 This guide is written for Unix systems. If you're using Windows, [get help](https://988lifeline.org/)
+
+---
 
 1. Install Ruby and Rails
 
@@ -56,23 +60,91 @@ You can add more pages and controllers later with the same command.
 bin/rails server
 ```
 
-8. Now you can edit your page files
+If everything works, the setup is done and you can start coding.
 
-Your pages are in `app/views/pages/`. These are ruby files, you can write Ruby and HTML in here. You can write CSS and JavaScript too but I like to use a global stylesheet and separate my JS.
+---
 
-### CSS
+## Where to write your code
+
+Your pages are in `app/views/pages/` in files like `example.html.erb`. These are "Embedded Ruby" files, you can write Ruby and HTML in here and they will be rendered into pure HTML when served. You _could_ also write CSS and JavaScript in here but you should use a global stylesheet and separate your JS into controllers, that's how Hotwire was intended to be used.
+
+Take a look inside `config/routes.rb` - this is where the routing is defined. The `generate` command we ran before already set up routes for our pages, but you can change it.
+
+### Global CSS
 
 To change global styles, edit `app/assets/stylesheets/application.css`
 
-### JS
+### Adding Ruby code
 
-To write page-specific scripts, edit `app/controllers/pagename_controller.js` e.g. `example_controller.js`, then attach it in your page's .erb file like this:
+You you should write Ruby code inside the controller files in `app/controllers/` or in helper files in `app/helpers/`. The Ruby code is executed on the server so you should do sensitive operations here.
+
+Controllers handle the business logic and the flow of data, e.g. handling form submissions, updating the database or rendering UI. Their names must end with `_controller.rb`.
+
+Helpers are for organizing and simplifying the logic used in views, e.g. formatting data or making some calculations. Their names must end with `_helper.rb`.
+
+Here's an example of using some computed data:
+
+Edit `app/helpers/application_helpers.rb`. This is available throughout your app. Use this code to get the current data:
+
+```ruby
+module ApplicationHelper
+  def current_date_example
+    Date.today.to_s
+  end
+end
+```
+
+Then edit `app/views/pages/home.html.erb` and add this:
+
+```html
+<p><%= current_date_example %></p>
+```
+
+Restart your server.
+
+Now when you visit your homepage (at `/`) you will see the current date.
+
+### Adding JavaScript code
+
+Hotwire uses a JavaScript framework called Stimulus. The JS code is executed in the client browser so you shouldn't do sensitive operations here.
+
+To write a script, create a controller file in `app/javascript/controllers/` and call it `example_controller.js`. It needs the `_controller` at the end of the name.
+
+Then attach the controller to an element in your HTML using the `data-controller` attribute, like this:
 
 ```html
 <div data-controller="example">...</div>
 ```
 
-### Adding a database
+`"example"` should match the controller name (in `example_controller.js`) so that Stimulus can attach it.
+
+Now add some code to your controller. Inside `example_controller.js`, use this structure:
+
+```js
+import { Controller } from "@hotwired/stimulus";
+
+export default class extends Controller {
+  connect() {
+    // Code inside connect() runs when the attached HTML element first loads.
+    example();
+  }
+
+  disconnect() {
+    // Code inside disconnect() runs when the element unloads.
+  }
+
+  // You can write your functions here and call them in connect() or disconnect()
+  sayHi() {
+    console.log("Hi");
+  }
+}
+```
+
+For more details, read the official docs: [Stimulus Controllers](https://stimulus.hotwired.dev/reference/controllers)
+
+## Adding a database
+
+If you didn't add a database during initial setup, here's how you can add it afterwards.
 
 1. Add SQLite3 to your `Gemfile` by adding this line
 
@@ -98,8 +170,16 @@ bin/rails db:create
 rails db:migrate
 ```
 
-### Notes
+## Restarting
 
-The app will automatically reload when you make changes to the HTML. But if you make changes to the CSS or to things like controllers or the router, you need to restart your server (ctrl+c to stop it and then run `bin/rails server`).
+The app will automatically show changes when you edit your `.html.erb` files. But if you make changes to other things then you need to restart your server (Stop it with `ctrl+c` and then run `bin/rails server`).
 
-Now if you want to host your app somewhere, read [this](/posts/005-how-to-host-rails-app-on-coolify).
+For some changes (e.g. CSS files, JS files, adding new dependencies) you should also clean out precompiled and cached assets and generate new ones, like this:
+
+```bash
+bin/rails assets:clobber && bin/rails assets:precompile
+```
+
+## Hosting your app
+
+If you want to host your Hotwire app somewhere, read [this](/posts/005-how-to-host-rails-app-on-coolify).

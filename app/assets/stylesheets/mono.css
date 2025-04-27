@@ -10,7 +10,6 @@
   --global-bg-color: rgb(12, 12, 11);
   /* --global-bg-color: #010101; */
   --global-accent-color: rgb(255, 229, 197);
-  --global-accent-color-light: rgb(255, 243, 228);
 }
 
 body {
@@ -130,6 +129,10 @@ ul li::marker {
   content: "- ";
 }
 
+ol li::marker {
+  color: var(--global-accent-color);
+}
+
 button {
   background-color: var(--global-accent-color);
   border: 0;
@@ -152,8 +155,9 @@ pre {
   background-color: #252524 !important;
   padding: 0.75rem;
   overflow-x: auto;
-  white-space: nowrap;
-  break-inside: avoid;
+  /* white-space: nowrap; */
+  /* break-inside: avoid; */
+  line-height: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4pt;
 }
@@ -201,4 +205,11 @@ code:not(pre > code) {
 
 .anchor {
   display: none;
+}
+
+blockquote {
+  background-color: #252524;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0 4pt 4pt 0;
+  border-left: 2px solid var(--global-accent-color);
 }

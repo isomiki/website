@@ -1,4 +1,4 @@
-## Hot to host a Rails + Hotwire app on Coolify
+# How to host a Rails + Hotwire app on Coolify
 
 Hotwire uses Rails so this guide applies to any Rails app.
 I assume you already have your Rails app working.
@@ -28,7 +28,7 @@ On the next screen ("Select a repository"):
 - Enter the repo URL you copied earlier.
 - Enter the branch name you're using (`main`, `master`, ...).
 - For Build Pack leave Nixpacks.
-- For the Port, use 3000.
+- For the Port, use `3000`.
 - Leave "Is it a static site?" disabled.
 
 3. Configure the application
@@ -57,7 +57,7 @@ Once you see a green "Running" on top of the Configuration screen, you can visit
 
 You're done.
 
-### Notes
+## Notes
 
 To set up an SSH key, run this in your terminal:
 

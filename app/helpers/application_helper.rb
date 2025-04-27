@@ -54,7 +54,7 @@ module ApplicationHelper
           post_entries << {
             index: index,
             title: title,
-            file_name: file_name
+            file_name: file_name.sub(/\.md\z/, '')
           }
         end
 

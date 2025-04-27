@@ -1,4 +1,4 @@
-## How the CIA could destroy bitcoin (or, why they probably created it)
+# How the CIA could destroy bitcoin (or, why they probably created it)
 
 They could infiltrate the ASIC manufacturers and plant hardware-level backdoors/malware. 5-10 years later, the hardware is used by most miners.
 
