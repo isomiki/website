@@ -150,7 +150,7 @@ export default class extends Controller {
 
 For more details, read the official docs: [Stimulus Controllers](https://stimulus.hotwired.dev/reference/controllers)
 
-## Adding a database
+## Adding a database after setup
 
 If you didn't add a database during initial setup, here's how you can add it afterwards.
 
@@ -178,7 +178,7 @@ bin/rails db:create
 rails db:migrate
 ```
 
-## Restarting
+## Notes
 
 The app will automatically show changes when you edit your `.html.erb` files. But if you make changes to other things then you need to restart your server (Stop it with `ctrl+c` and then run `bin/rails server`).
 
