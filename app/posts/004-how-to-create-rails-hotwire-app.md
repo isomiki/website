@@ -4,6 +4,8 @@
 
 This guide is written for Unix systems. If you're using Windows, [get help](https://988lifeline.org/)
 
+btw this website uses Hotwire and you can get the code on [GitLab](https://gitlab.com/mrnb/marinbelec-website/-/tree/hotwire).
+
 ---
 
 1. Install Ruby and Rails
