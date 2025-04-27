@@ -149,8 +149,11 @@ button:hover {
 }
 
 pre {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: #252524 !important;
   padding: 0.75rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  break-inside: avoid;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4pt;
 }
@@ -162,6 +165,38 @@ code:not(pre > code) {
   border-radius: 2pt;
   padding-left: 4pt;
   padding-right: 4pt;
+}
+
+.fade-overflow * {
+  position: relative;
+  z-index: 80;
+}
+
+.fade-overflow {
+  background:
+      /* Shadow covers */ linear-gradient(
+      to right,
+      rgb(37, 37, 36) 30%,
+      rgba(37, 37, 36, 0)
+    ),
+    linear-gradient(to left, #252524 30%, rgba(37, 37, 36, 0)) 100% 0,
+    /* Shadows */
+      radial-gradient(
+        farthest-side at 0% 50%,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0)
+      ),
+    radial-gradient(
+        farthest-side at 100% 50%,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0)
+      )
+      100% 0;
+
+  background-repeat: no-repeat;
+  background-color: #252524;
+  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+  background-attachment: local, local, scroll, scroll;
 }
 
 .anchor {

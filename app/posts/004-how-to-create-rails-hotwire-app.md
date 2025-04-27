@@ -102,4 +102,4 @@ rails db:migrate
 
 The app will automatically reload when you make changes to the HTML. But if you make changes to the CSS or to things like controllers or the router, you need to restart your server (ctrl+c to stop it and then run `bin/rails server`).
 
-Next you'll probably want to host it somewhere. Read [this](/posts/005-hosting-rails-hotwire-on-coolify)
+Now if you want to host your app somewhere, read [this](/posts/005-how-to-host-rails-app-on-coolify).
