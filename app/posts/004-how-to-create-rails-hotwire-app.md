@@ -133,12 +133,12 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   connect() {
-    // Code inside connect() runs when the attached HTML element first loads.
+    // Code inside connect() runs when the attached HTML element first loads
     example();
   }
 
   disconnect() {
-    // Code inside disconnect() runs when the element unloads.
+    // Code inside disconnect() runs when the element unloads
   }
 
   // You can write your functions here and call them in connect() or disconnect()
