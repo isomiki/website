@@ -72,7 +72,7 @@ a:focus {
 h2 {
   text-decoration: underline;
   text-decoration-thickness: 3pt;
-  text-underline-offset: 4pt;
+  text-underline-offset: 3pt;
   line-height: 1.8em;
 }
 
