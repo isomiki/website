@@ -23,7 +23,7 @@ body {
   padding: 0 1rem;
   overflow-wrap: break-word;
   max-width: 640px;
-  line-height: 1.3rem;
+  line-height: 1.5;
 }
 
 span {
@@ -31,7 +31,6 @@ span {
 }
 
 p {
-  line-height: 1.5rem;
 }
 
 ul li {
@@ -44,7 +43,6 @@ ol li {
 
 h1 {
   font-size: 3rem;
-  line-height: 3rem;
   text-align: center;
 }
 

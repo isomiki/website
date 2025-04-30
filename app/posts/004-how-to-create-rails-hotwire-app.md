@@ -78,7 +78,7 @@ To change global styles, edit `app/assets/stylesheets/application.css`
 
 ### Adding Ruby code
 
-You you should write Ruby code inside the controller files in `app/controllers/` or in helper files in `app/helpers/`. The Ruby code is executed on the server so you should do sensitive operations here.
+You should write Ruby code inside the controller files in `app/controllers/` or in helper files in `app/helpers/`. The Ruby code is executed on the server so you should do sensitive operations here.
 
 Controllers handle the business logic and the flow of data, e.g. handling form submissions, updating the database or rendering UI. Their names must end with `_controller.rb`.
 
