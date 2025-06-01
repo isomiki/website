@@ -27,7 +27,7 @@ You might have a different firewall tool 4. Configure SSHD:
 sudo vim /etc/ssh/sshd_config
 ```
 
-Change these lines:
+Set these options:
 
 - `Port 12345` Set it to your new port
 - `PermitRootLogin prohibit-password` Self explanatory
