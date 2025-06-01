@@ -1,27 +1,32 @@
 # How to harden your SSH configuration and use an alternative port
 
-> We'll use an SSH key instead of a password for login, we'll use a custom SSH port and tweak some other settings.
+> I'll show you how to set a custom SSH port, set up SSH keys and tweak some other settings.
 
-1. **Open a terminal session on the target machine**
-2. **Before you change anything, add your key or you might get locked out**
+1. **Set up the SSH key**
 
-- Generate a key if you don't have one (use your own options):
+- Generate a key (use your own options):
 
 ```bash
-ssh-keygen -t ed25519 -C "My favorite server" -f ~/.ssh/pokemon
+ssh-keygen -t ed25519 -C "Key for my target machine" -f ~/.ssh/example-key
 ```
 
-- Add the public key to a new line in `/home/pikachu/.ssh/authorized_keys` on the target machine
+- Copy the public key from `~/.ssh/example-key.pub` on your local machine to a new line in `/home/boss/.ssh/authorized_keys` on the target machine
 
-3. **Pick an alternative port for SSH**
+2. **Set an alternative port for SSH**
 
-Use something above the privileged range of 1023. Don't use common alternatives like 2222. I also check the port list on wikipedia to see if there's another common service which might conflict later. Now forward that port, e.g.
+Pick a port above the privileged port range (0-1023). Don't use common alternatives like 2222. I also check the [list of port numbers on wikipedia](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers) to see if there's another common service which might conflict later.
+
+Forward that port on the target machine, e.g.
 
 ```bash
 sudo ufw allow 12345
 ```
 
-You might have a different firewall tool 4. Configure SSHD:
+`ufw` is a firewall tool but you might have a different one.
+
+4. **Configure SSHD**
+
+On the target
 
 ```bash
 sudo vim /etc/ssh/sshd_config
@@ -33,9 +38,11 @@ Set these options:
 - `PermitRootLogin prohibit-password` Self explanatory
 - `PasswordAuthentication no` Forbids password login for other users too
 - `X11Forwarding no` X11 has vulnerabilities and you probably aren't using X11 forwarding anyway. Even if you use X11 or VNC this won't interfere.
-- `AllowUsers pikachu` Specify your user(s) here. If you have multiple, separate them with spaces. This might not even be necessary, I forgot, but I think with the particular setup above this is required.
+- `AllowUsers boss` Specify your user(s) here. If you have multiple, separate them with spaces. This might not even be necessary, I forgot, but I think with the particular setup above this is required.
 
 5. **Restart the ssh daemon**
+
+On the target
 
 ```bash
 sudo systemctl restart sshd
@@ -43,49 +50,51 @@ sudo systemctl restart sshd
 
 > Don't disconnect yet, keep the session in case you broke something.
 
-Log in from a new terminal session. Specify your new port and key:
+Start a new SSH connection from a new terminal session. Specify your new port and key:
 
 ```bash
-ssh -p 12345 -i ~/.ssh/pokemon pikachu@some-address
+ssh -p 12345 -i ~/.ssh/example-key boss@some-address
 ```
 
 Use the target's IP or hostname of course.
 
-6. **Make logging in easier for yourself**
+6. **Make connecting easier for yourself**
 
 On your local machine, configure your connection in `~/.ssh/config`:
 
 ```txt
-Host pokemon
+Host example-target
     HostName some-address
-    User pikachu
-    IdentityFile ~/.ssh/pokemon
+    User boss
+    IdentityFile ~/.ssh/example-key
     Port 12345
 ```
 
 Then you can connect like this:
 
 ```bash
-alias s='ssh pikachu@pokemon'
+alias s='ssh boss@example-target'
 ```
 
 ## Rate limiting
 
 I also like to ban IPs which fail login repeatedly.
 
-1. Install `fail2ban`
-2. Enable auth logging for sshd in `/etc/ssh/sshd_config`
+On the target:
 
-```txt
-SyslogFacility AUTH
-LogLevel INFO
+1. Install `fail2ban`
+
+```bash
+sudo apt install fail2ban
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
 ```
 
-3. Configure fail2ban in `/etc/fail2ban/jail.local`
+2. Configure fail2ban in `/etc/fail2ban/jail.local`
 
-The config you need depends on how your system logs auth data. If you're not sure just try both.
+Config settings depend on how your system logs auth data. If you're not sure just try both and restart afterwards.
 
-For journalctl (if `journalctl -u ssh.service` shows fresh logs):
+For journalctl (if `journalctl -u ssh.service` has logs):
 
 ```txt
 [sshd]
@@ -99,7 +108,7 @@ findtime = 600
 bantime = 3600
 ```
 
-For sshd:
+For sshd (if `/var/log/auth.log` has logs):
 
 ```txt
 [sshd]
@@ -116,15 +125,15 @@ If the file `/var/log/auth.log` doesn't exist you might need to create it or you
 
 In reality I use more extreme rate limiting. If you ban yourself you can probably bypass it with some console or physical access to the machine.
 
-_**Sidenote:** on some systems this config wont't work because fail2ban can't find the auth logs. Research the `logpath` and `backend` options for the jail config._
+_**Sidenote:** on some systems this config wont't work because fail2ban can't find the auth logs. Research the `logpath` and `backend` options for the jail config and check auth logging settings in `/etc/ssh/sshd_config`._
 
-4. Restart fail2ban
+3. Restart fail2ban
 
 ```bash
 sudo systemctl restart fail2ban
 ```
 
-5. Verify status
+4. Verify status
 
 ```bash
 sudo fail2ban-client status sshd
