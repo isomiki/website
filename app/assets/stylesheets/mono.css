@@ -36,6 +36,10 @@ body {
   line-height: 1.5;
 }
 
+p {
+  margin: 0.5rem auto;
+}
+
 a {
   color: var(--global-blue-color);
   text-decoration: underline;
@@ -151,7 +155,7 @@ ul {
 }
 
 ul li {
-  margin: 0.7rem 0;
+  margin: 0.3rem 0;
 }
 
 ul li::marker {

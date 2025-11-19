@@ -3,8 +3,8 @@
 
   <% if load_posts.present? %>
     <% load_posts.each do |post| %>
-      <p class="accent-text">[<%= post[:index] %>]
-        <%= link_to post[:title], post_path(name: post[:file_name]) %></p>
+      <span class="accent-text">[<%= post[:index] %>]
+        <%= link_to post[:title], post_path(name: post[:file_name]) %></span><br />
     <% end %>
   <% else %>
     <p>Empty</p>
