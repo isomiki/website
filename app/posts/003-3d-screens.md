@@ -1,4 +1,4 @@
-# 3D Screens
+# 3D screens idea
 
 TLDR: holography + cymatics
 
