@@ -8,13 +8,14 @@
 
 :root {
   /* --global-bg-color: rgb(12, 12, 11); */
-  --global-bg-color: #080a0b;
+  /* --global-bg-color: #080a0b; */
+  --global-bg-color: #151615;
   /* --global-bg-color: #010101; */
   /* --global-accent-color: rgb(255, 229, 197); */
   /* --global-accent-color: rgb(222, 197, 166); */
   /* --global-accent-color: #f8bc8c; */
   /* --global-accent-color: hsl(22, 93%, 73%); */
-  --global-accent-color: #ffcf40;
+  --global-accent-color: #ffc34a;
   --global-accent-color-alt: rgb(42, 41, 40);
   --global-blue-color: #abc4c0;
   /* --global-text-color: hsl(27, 55%, 74%); */
