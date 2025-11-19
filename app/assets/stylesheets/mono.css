@@ -23,7 +23,7 @@
   /* --global-text-color: hsl(27, 55%, 74%); */
   --global-text-color: hsl(37, 26%, 75%);
   /* --global-text-light-color: hsl(27, 55%, 78%); */
-  --global-text-light-color: hsl(37, 26%, 82%);
+  --global-text-light-color: hsl(37, 26%, 85%);
 }
 
 body {
@@ -69,7 +69,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: white;
+  color: var(--global-text-light-color);
 }
 
 h2 {
@@ -128,7 +128,28 @@ img {
   color: var(--global-accent-color);
 }
 
-.title-text {
+#title > a {
+  color: var(--global-blue-color);
+  text-decoration: underline;
+  text-decoration-thickness: 3pt;
+  text-underline-offset: 5pt;
+  padding-left: 2.3pt;
+  padding-right: 2.3pt;
+}
+
+#title > a:hover,
+#title > a:active,
+#title > a:focus {
+  color: var(--global-bg-color) !important;
+  background-color: var(--global-blue-color);
+  text-decoration-color: var(--global-blue-color);
+  border-radius: 3pt;
+  text-decoration: none;
+  padding-bottom: 0.2pt;
+  padding-top: 0.3pt;
+}
+
+.title-name {
   color: white;
 }
 
