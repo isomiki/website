@@ -14,14 +14,16 @@
   /* --global-accent-color: rgb(255, 229, 197); */
   /* --global-accent-color: rgb(222, 197, 166); */
   /* --global-accent-color: #f8bc8c; */
-  /* --global-accent-color: hsl(22, 93%, 73%); */
-  --global-accent-color: #ffc34a;
+  --global-accent-color: hsl(22, 93%, 73%);
+  /* --global-accent-color: #ffc34a; */
   --global-accent-color-alt: rgb(42, 41, 40);
-  --global-blue-color: #abc4c0;
+  /* --global-blue-color: #abc4c0; */
+  --global-blue-color: #8fa4c7;
+  /* --global-blue-color: #7ec3e6; */
   /* --global-text-color: hsl(27, 55%, 74%); */
-  --global-text-color: hsl(37, 26%, 70%);
+  --global-text-color: hsl(37, 26%, 75%);
   /* --global-text-light-color: hsl(27, 55%, 78%); */
-  --global-text-light-color: hsl(37, 26%, 78%);
+  --global-text-light-color: hsl(37, 26%, 82%);
 }
 
 body {
@@ -67,7 +69,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--global-accent-color);
+  color: white;
 }
 
 h2 {
@@ -127,7 +129,7 @@ img {
 }
 
 .title-text {
-  color: var(--global-text-light-color);
+  color: white;
 }
 
 .cmd-carret {
