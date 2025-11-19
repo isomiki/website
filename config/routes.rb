@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "pages#home"
 
-  get "about", to: "pages#about"
+  get "summary", to: "pages#summary"
   get "projects", to: "pages#projects"
   get "tools", to: "pages#tools"
   get 'tools/:name', to: 'tools#show', as: :tool

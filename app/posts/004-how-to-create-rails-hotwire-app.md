@@ -46,10 +46,10 @@ bin/rails hotwire:install
 
 6. Create some pages and controllers for them
 
-I'll create home, about, posts and contact.
+I'll create home, summary, posts and contact.
 
 ```bash
-bin/rails generate controller Pages home about posts contact
+bin/rails generate controller Pages home summary posts contact
 ```
 
 Controllers are for backend logic that runs on your server and not in the browser. You probably don't need a controller for most pages so you can leave out the `controller` part.

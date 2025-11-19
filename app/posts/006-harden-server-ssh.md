@@ -1,4 +1,4 @@
-# How to harden your SSH configuration and use an alternative port
+# How to harden your server's SSH config
 
 > I'll show you how to set a custom SSH port, set up SSH keys and tweak some other settings.
 

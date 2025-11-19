@@ -1,7 +1,7 @@
 module ApplicationHelper
   def page_title
     case request.host
-    when "marinbelec.com", "mrnb.net", "bel.ec"
+    when "marinbelec.com", "mrnb.net", "bel.ec", "127.0.0.1"
       "Marin Belec"
     when "isomiki.com"
       "isomiki"

@@ -7,16 +7,25 @@
 }
 
 :root {
-  --global-bg-color: rgb(12, 12, 11);
+  /* --global-bg-color: rgb(12, 12, 11); */
+  --global-bg-color: #080a0b;
   /* --global-bg-color: #010101; */
   /* --global-accent-color: rgb(255, 229, 197); */
-  --global-accent-color: rgb(222, 197, 166);
+  /* --global-accent-color: rgb(222, 197, 166); */
+  /* --global-accent-color: #f8bc8c; */
+  /* --global-accent-color: hsl(22, 93%, 73%); */
+  --global-accent-color: rgb(236, 231, 87);
   --global-accent-color-alt: rgb(42, 41, 40);
+  --global-blue-color: #abc4c0;
+  /* --global-text-color: hsl(27, 55%, 74%); */
+  --global-text-color: hsl(37, 26%, 70%);
+  /* --global-text-light-color: hsl(27, 55%, 78%); */
+  --global-text-light-color: hsl(37, 26%, 78%);
 }
 
 body {
   background-color: var(--global-bg-color);
-  color: white;
+  color: var(--global-text-color);
   font-family: "Nice font huh? Trying to find the name? Well I tricked your browser so now you need to use one of those terrible font detection websites. Or use it as a reason to contact me :)";
   font-size: 11pt;
   margin: 3rem auto;
@@ -27,7 +36,7 @@ body {
 }
 
 a {
-  color: var(--global-accent-color);
+  color: var(--global-blue-color);
   text-decoration: underline;
   text-decoration-thickness: 2pt;
   text-underline-offset: 2.3pt;
@@ -39,12 +48,21 @@ a:hover,
 a:active,
 a:focus {
   color: var(--global-bg-color);
-  background-color: var(--global-accent-color);
-  text-decoration-color: var(--global-accent-color);
+  background-color: var(--global-blue-color);
+  text-decoration-color: var(--global-blue-color);
   border-radius: 2pt;
   text-decoration: none;
   padding-bottom: 0.3pt;
   padding-top: 0.3pt;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--global-accent-color);
 }
 
 h2 {
@@ -103,9 +121,22 @@ img {
   color: var(--global-accent-color);
 }
 
+.title-text {
+  color: var(--global-text-light-color);
+}
+
 .cmd-carret {
   animation: blink 750ms step-start infinite;
-  /* color: var(--global-accent-color); */
+  color: var(--global-text-light-color);
+}
+
+.accent-text {
+  color: var(--global-accent-color);
+}
+
+.list-label {
+  font-weight: bold;
+  color: var(--global-text-light-color);
 }
 
 @keyframes blink {
