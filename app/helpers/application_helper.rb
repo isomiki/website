@@ -1,25 +1,28 @@
 module ApplicationHelper
   def page_title
     case request.host
-    when "marinbelec.com", "mrnb.net"
+    when "marinbelec.com", "mrnb.net", "bel.ec"
       "Marin Belec"
     when "isomiki.com"
-      "IsoMiki"
+      "isomiki"
     else
       "Welcome"
     end
   end
 
   def contact_email
+    fallback_email = "(hidden)"
     case request.host
     when "marinbelec.com"
-      ENV["EMAIL_MARINBELEC"] || "undefined"
+      ENV["EMAIL_MARINBELEC"] || fallback_email
     when "mrnb.net"
-      ENV["EMAIL_MRNB"] || "undefined"
+      ENV["EMAIL_MRNB"] || fallback_email
+    when "bel.ec"
+      ENV["EMAIL_BELEC"] || fallback_email
     when "isomiki.com"
-      ENV["EMAIL_ISOMIKI"] || "undefined"
+      ENV["EMAIL_ISOMIKI"] || fallback_email
     else
-      "(hidden)"
+      fallback_email
     end
   end
   
