@@ -1,0 +1,7 @@
+{
+  "phases" {
+    "setup": {
+      "nixPkgs": ["ruby_3_4"]
+    }
+  }
+}
