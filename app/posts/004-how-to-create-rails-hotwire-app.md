@@ -180,9 +180,9 @@ rails db:migrate
 
 ## Notes
 
-The app will automatically show changes when you edit your `.html.erb` files. But if you make changes to other things then you need to restart your server (Stop it with `ctrl+c` and then run `bin/rails server`).
+The app will automatically show changes when you edit your `.html.erb` files. But if you make changes to other files, then you need to restart your server — you can stop it with `ctrl+c` and then run `bin/rails server` again.
 
-For some changes, e.g. CSS files, JS files, adding new dependencies, you should also clean out precompiled and cached assets and generate new ones, like this:
+For some changes, e.g. CSS files, JS files or adding new dependencies, you should also clean out precompiled and cached assets and generate new ones, like this:
 
 ```bash
 bin/rails assets:clobber && bin/rails assets:precompile
