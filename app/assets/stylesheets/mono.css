@@ -9,7 +9,7 @@
 :root {
   /* --global-bg-color: rgb(12, 12, 11); */
   /* --global-bg-color: #080a0b; */
-  --global-bg-color: #151615;
+  --global-bg-color: hsl(22, 2%, 7%);
   /* --global-bg-color: #010101; */
   /* --global-accent-color: rgb(255, 229, 197); */
   /* --global-accent-color: rgb(222, 197, 166); */
@@ -21,9 +21,9 @@
   --global-blue-color: #8fa4c7;
   /* --global-blue-color: #7ec3e6; */
   /* --global-text-color: hsl(27, 55%, 74%); */
-  --global-text-color: hsl(37, 26%, 75%);
+  --global-text-color: hsl(37, 26%, 85%);
   /* --global-text-light-color: hsl(27, 55%, 78%); */
-  --global-text-light-color: hsl(37, 26%, 85%);
+  --global-text-light-color: hsl(37, 26%, 97%);
 }
 
 body {
