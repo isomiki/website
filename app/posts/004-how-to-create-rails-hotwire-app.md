@@ -38,11 +38,13 @@ bundle install
 bin/rails db:create
 ```
 
-5. Install Hotwire
+5. Set up JavaScript module imports
 
 ```bash
-bin/rails hotwire:install
+bin/rails importmap:install
 ```
+
+Accept all overwrites.
 
 6. Create some pages and controllers for them
 
