@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get "contact", to: "pages#contact"
   get "posts", to: "pages#posts"
   get "posts/:name", to: "posts#show", as: :post
+
+  # Same feed on both paths, no redirect.
+  get "rss", to: "feeds#show", defaults: { format: "rss" }, as: :rss_feed
+  get "feed", to: "feeds#show", defaults: { format: "rss" }, as: :feed
   get "crypto", to: "pages#crypto"
   
   get "misc", to: "pages#misc"
