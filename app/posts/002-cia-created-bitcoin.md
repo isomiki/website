@@ -1,5 +1,7 @@
 # How the CIA could destroy bitcoin (or, why they probably created it)
 
+> 2025 November I think
+
 The CIA could easily infiltrate manufacturers of ASIC machines used by bitcoin miners and plant hardware-level backdoors/malware. 5-10 years later, the hardware is used by most miners. They could also assassinate Core devs.
 
 The law could prohibit Bitcoin ATMs, and crypto exchanges could be banned, making on/off-ramps virtually non-existent, aside from the occasional hand-to-hand irl exchange. People could still get paid in Bitcoin but practically nobody would accept it (no network effect, no utility).
