@@ -40,7 +40,7 @@ module ApplicationHelper
     local_time_formatted = local_time.strftime("%b %d %H:%M")
     local_time_iso = local_time.strftime("%Y-%m-%dT%H:%M:%S")
 
-    render partial: 'pages/partials/my_time', locals: {
+    render partial: 'pages/my_time', locals: {
       local_time_formatted: local_time_formatted,
       local_time_iso: local_time_iso
     }
