@@ -1,7 +1,7 @@
 class ToolsController < ApplicationController
   def show
     tool_template = "tools/#{params[:name]}"
-    puts "Looking for template: #{tool_template}"  # Debugging line
+    puts "Looking for template: #{tool_template}"
     
     filepath = Rails.root.join("app", "views", "tools", "#{params[:name]}.html.erb")
     unless File.exist?(filepath)

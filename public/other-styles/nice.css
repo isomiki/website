@@ -9,7 +9,6 @@
 
 :root {
   --global-bg-color: rgb(255, 251, 246);
-  /* --global-bg-color: #010101; */
   --global-text-color: #2f2f2f;
   --global-accent-color: rgb(155, 155, 155);
 }
@@ -57,7 +56,6 @@ h6 {
 
 a {
   color: var(--global-accent-color);
-  /* color: var(--global-text-color); */
   text-decoration: underline;
   text-decoration-thickness: 2pt;
   text-underline-offset: 2.3pt;

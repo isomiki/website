@@ -1,7 +1,4 @@
 module ApplicationHelper
-  # Who this site belongs to, for the host being served. Single source of truth
-  # for anything that needs to name the site. Nil on an unrecognised host, so
-  # callers can decide their own fallback rather than inheriting "Welcome".
   def site_name
     case request.host
     when "marinbelec.com", "mrnb.net", "bel.ec", "127.0.0.1", "localhost"
