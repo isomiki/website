@@ -27,6 +27,10 @@
   --global-text-muted-color: hsl(37, 8%, 48%);
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   background-color: var(--global-bg-color);
   color: var(--global-text-color);
