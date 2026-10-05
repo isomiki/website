@@ -21,10 +21,10 @@ module ApplicationHelper
     case request.host
     when "marinbelec.com"
       ENV["EMAIL_MARINBELEC"] || fallback_email
-    when "mrnb.net"
-      ENV["EMAIL_MRNB"] || fallback_email
     when "bel.ec"
       ENV["EMAIL_BELEC"] || fallback_email
+    when "mrnb.net"
+      ENV["EMAIL_MRNB"] || fallback_email
     when "isomiki.com"
       ENV["EMAIL_ISOMIKI"] || fallback_email
     else
