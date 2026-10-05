@@ -64,9 +64,13 @@ h6 {
 }
 
 h2 {
-  text-decoration: underline;
-  text-decoration-thickness: 3pt;
-  text-underline-offset: 3pt;
+  width: fit-content;
+  color: var(--global-bg-color);
+  background-color: var(--global-text-light-color);
+  text-decoration: none;
+  padding-top: 0.3pt;
+  padding-bottom: 0.3pt;
+  -webkit-text-stroke: 1px var(--global-bg-color);
 }
 
 h3 {
