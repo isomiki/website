@@ -17,11 +17,36 @@
 }
 
 html {
+  /* darker than --global-bg-color to offset the lift from the noise layer */
+  background-color: hsl(22, 2%, 5.4%);
   scrollbar-gutter: stable;
 }
 
+#static-noise {
+  position: fixed;
+  inset: -50%;
+  z-index: -1;
+  background-repeat: repeat;
+  background-size: 1024px 1024px;
+  opacity: 0.07;
+  pointer-events: none;
+  animation: static-noise 0.3s steps(3) infinite;
+}
+
+@keyframes static-noise {
+  0% { transform: translate(0); }
+  50% { transform: translate(-10%, 5%); }
+  100% { transform: translate(10%, -5%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #static-noise {
+    display: none;
+  }
+}
+
 body {
-  background-color: var(--global-bg-color);
+  background-color: transparent;
   color: var(--global-text-color);
   font-family: "Nice font huh? Trying to find the name? Well I tricked your browser so now you need to use one of those terrible font detection websites. Or use it as a reason to contact me :)";
   font-size: 11pt;
